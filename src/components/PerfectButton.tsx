@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 import "../index.css"
+declare global {
+  interface CSSProperties {
+    '--x'?: string;
+  }
+}
 
 const PerfectButton = () => {
   return (
