@@ -1,6 +1,5 @@
-import { motion, TargetAndTransition } from "framer-motion";
+import { motion } from "framer-motion";
 import "../index.css"
-import { CSSProperties } from "react";
 // declare global {
 //   interface CSSProperties {
 //     '--x'?: string;
