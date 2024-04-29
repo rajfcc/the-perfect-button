@@ -31,4 +31,4 @@ export default {
 
 
 
-//deploy: the-perfect-button.vercel.app
+deploy: the-perfect-button.vercel.app
