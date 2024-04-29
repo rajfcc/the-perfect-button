@@ -1,16 +1,46 @@
-import { motion } from "framer-motion";
+import { motion, TargetAndTransition } from "framer-motion";
 import "../index.css"
-declare global {
-  interface CSSProperties {
-    '--x'?: string;
-  }
-}
+import { CSSProperties } from "react";
+// declare global {
+//   interface CSSProperties {
+//     '--x'?: string;
+//   }
+// }
 
-const PerfectButton = () => {
+// interface CustomAnimationProps {
+//   "--x"?: string;
+//   // Add other animation properties here if needed
+// }
+
+// const animationProps: CustomAnimationProps = {
+//   "--x": "-100%",
+// };
+
+// const initialAnimationProps = {
+//   "--x": "100%", // Custom CSS property
+//   scale: 1, // Initial scale
+// };
+const PerfectButton=()=>{
+type AnimationProperties = {
+  [key: string]: string | number; // Allow any CSS properties as keys with string or number values
+};
+
+const initialAnimationProps: AnimationProperties = {
+  "--x": "100%", // Custom CSS property for initial animation
+  scale: 1, // Initial scale
+};
+
+const animationProps: AnimationProperties = {
+  "--x": "-100%", // Custom CSS property for animation
+};
   return (
     <motion.button
-      initial={{ "--x": "100%", scale: 1 }}
-    animate={{ "--x": "-100%" }}
+      // initial={{ "--x": "100%", scale: 1 }as CSSProperties}
+    //animate={{ "--x": "-100%" }as CSSProperties}//
+    // initial={initialAnimationProps as TargetAndTransition}
+    // animate={animationProps as TargetAndTransition}
+    initial={initialAnimationProps as AnimationProperties}
+animate={animationProps as AnimationProperties}
     // initial={{x:"100%",scale:1}}
     //   animate={{ x: "-100%" }}
       whileTap={{ scale: 0.97 }}
