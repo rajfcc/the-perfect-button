@@ -1,4 +1,4 @@
-deployed: the-perfect-button.vercel.app
+deployed: https://the-perfect-button.vercel.app
 
 
 
